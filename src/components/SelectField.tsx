@@ -1,15 +1,8 @@
 import React from 'react';
 import styles from './Form.module.scss';
+import { SelectProps } from '../types/SelectProps';
 
-interface SelectFieldProps {
-  id: string;
-  label: string;
-  options: { value: string; label: string }[];
-  register: any;
-  error?: string;
-}
-
-export const SelectField: React.FC<SelectFieldProps> = ({ id, label, options, register, error }) => {
+export const SelectField: React.FC<SelectProps> = ({ id, label, options, register, error }) => {
   return (
     <div className={styles.field}>
       <label htmlFor={id} className={styles.label}>{label}</label>

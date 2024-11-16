@@ -1,15 +1,8 @@
 import React from 'react';
 import styles from './Form.module.scss';
+import { InputProps } from '../types/InputProps';
 
-interface InputFieldProps {
-  id: string;
-  label: string;
-  type: string;
-  register: any;
-  error: string;
-}
-
-export const InputField: React.FC<InputFieldProps> = ({ id, label, type = 'text', register, error }) => {
+export const InputField: React.FC<InputProps> = ({ id, label, type = 'text', register, error }) => {
   return (
     <div className={styles.field}>
       <label htmlFor={id} className={styles.label}>{label}</label>

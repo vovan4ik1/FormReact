@@ -1,14 +1,8 @@
 import React from 'react';
 import styles from './Form.module.scss';
+import { CheckProps } from '../types/CheckProps';
 
-interface CheckboxGroupProps {
-  label: string;
-  options: { value: string; label: string }[];
-  register: any; 
-  error?: string;
-}
-
-export const CheckGroups: React.FC<CheckboxGroupProps> = ({ label, options, register, error }) => {
+export const CheckGroups: React.FC<CheckProps> = ({ label, options, register, error }) => {
   return (
     <div className={styles.field}>
       <p className={styles.label}>{label}</p>

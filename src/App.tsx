@@ -6,6 +6,7 @@ import { InputField } from './components/InputField';
 import { SelectField} from './components/SelectField';
 import { CheckGroups } from './components/CheckGroups';
 import styles from './components/Form.module.scss';
+import { Form } from './types/Form';
 
 
 const schema = yup.object().shape({
@@ -15,23 +16,17 @@ const schema = yup.object().shape({
   skills: yup.array().of(yup.string()).min(1, 'At least one skill must be selected'),
 });
 
-interface FormData {
-  name: string;
-  email: string;
-  activity: string;
-  skills: string[];
-}
 
 export const App: React.FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<Form>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: Form) => {
     console.log('Form Data:', data);
   };
 
